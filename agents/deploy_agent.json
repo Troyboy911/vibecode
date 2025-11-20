@@ -1,0 +1,42 @@
+{
+  "id": "deploy_agent",
+  "name": "Deployment Operator",
+  "description": "Handles containerization and deployment to EasyPanel/Hostinger",
+  "version": "1.0.0",
+  "actions": [
+    {
+      "name": "build_container",
+      "description": "Build Docker container for app",
+      "parameters": {
+        "dockerfile_path": "string",
+        "tag": "string"
+      }
+    },
+    {
+      "name": "push_registry",
+      "description": "Push container to Docker Hub",
+      "parameters": {
+        "image": "string",
+        "registry": "string"
+      }
+    },
+    {
+      "name": "deploy_easypanel",
+      "description": "Deploy to EasyPanel via API",
+      "parameters": {
+        "app_name": "string",
+        "compose_file": "string"
+      }
+    }
+  ],
+  "tools": [
+    "docker_cli",
+    "easypanel_api",
+    "health_checker"
+  ],
+  "config": {
+    "reasoning_engine": "direct",
+    "memory_enabled": false,
+    "telemetry_enabled": true
+  }
+}

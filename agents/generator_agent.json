@@ -1,0 +1,46 @@
+{
+  "id": "generator_agent",
+  "name": "VibeCode Generator",
+  "description": "Generates VibeCode prompts and scaffolds new lead-gen apps",
+  "version": "1.0.0",
+  "actions": [
+    {
+      "name": "generate_prompt",
+      "description": "Generate a VibeCode-style prompt for building apps",
+      "parameters": {
+        "app_type": "string",
+        "features": "array"
+      }
+    },
+    {
+      "name": "scaffold_app",
+      "description": "Create a new lead-gen app scaffold",
+      "parameters": {
+        "name": "string",
+        "template": "string"
+      }
+    },
+    {
+      "name": "trigger_deploy",
+      "description": "Trigger deployment to EasyPanel",
+      "parameters": {
+        "app_id": "string",
+        "environment": "string"
+      }
+    }
+  ],
+  "tools": [
+    "file_writer",
+    "docker_builder",
+    "git_manager"
+  ],
+  "mcp_endpoints": [
+    "perplexity_research",
+    "warp_terminal"
+  ],
+  "config": {
+    "reasoning_engine": "chain-of-thought",
+    "memory_enabled": true,
+    "telemetry_enabled": true
+  }
+}
